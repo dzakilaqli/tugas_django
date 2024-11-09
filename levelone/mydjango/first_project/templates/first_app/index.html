@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Project</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>HALLO INI ADALAH INDEX.HTML</h1>
+    {{ insert_me }}
+
+    <p>Ini adalah logo apple</p>
+    <img
+      src="{%static 'images/logoapple.png' %}"
+      alt="logo apple"
+      width="10%"
+    />
+
+    <h1>Ownership Records</h1>
+    <table border="1">
+      <tr>
+        <th>Owner Name</th>
+        <th>Vehicle Type</th>
+        <th>License Plate</th>
+        <th>Purchase Date</th>
+      </tr>
+      {% for record in ownership_records %}
+      <tr>
+        <td>{{ record.vehicle.owner_name }}</td>
+        <td>{{ record.vehicle.vehicle_type.type_name }}</td>
+        <td>{{ record.vehicle.license_plate }}</td>
+        <td>{{ record.purchase_date }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

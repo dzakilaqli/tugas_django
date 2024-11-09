@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang</title>
+  </head>
+  <body>
+    <h1>Ini adalah list pelanggan:</h1>
+    {% if pelanggan %}
+    <ol>
+      {% for person in pelanggan %}
+      <li>
+        pelanggan info
+        <ul>
+          <li>Nama depan: {{person.nama_depan}}</li>
+          <li>Nama belakang: {{person.nama_belakang}}</li>
+          <li>Email: {{person.email}}</li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </body>
+</html>
